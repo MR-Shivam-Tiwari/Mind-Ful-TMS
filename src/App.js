@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './Component/Header/Navbar';
-import Footer from "./Component/Footer/Footer"
+
 import './tailwind.css';
 import Home from './Component/Main/Home';
 import Contactus from './Component/Main/Contactus';
@@ -18,6 +17,7 @@ import AssesmentPage from './Component/Main/Assesment/AssesmentPage';
 import Result from './Component/Main/Assesment/Result';
 import Sample1 from './Component/Main/Service/Sample1';
 import Sample2 from './Component/Main/Service/Sample2';
+import Dummycontact from './Component/Main/Dummycontact';
 
 
 
@@ -44,6 +44,7 @@ function App() {
             <Route path="/result" element={<Result />} />
             <Route path="/sample-1" element={<Sample1 />} />
             <Route path="/sample-2" element={<Sample2 />} />
+            <Route path="/contact" element={<Dummycontact />} />
 
 
 

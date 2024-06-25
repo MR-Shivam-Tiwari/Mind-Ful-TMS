@@ -61,7 +61,7 @@ function Sample2() {
         </div>
         <div className='flex justify-center'>
 
-          <button class=" bg-zinc-200 text-zinc-800 p-3 px-5 rounded-lg">CONTACT US</button>
+          <button class=" bg-zinc-200 text-zinc-800 p-3 px-5 rounded-lg" onClick={()=> navigate('/contact')}>CONTACT US</button>
         </div>
 
       </div>
