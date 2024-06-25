@@ -20,11 +20,11 @@ function Footer() {
                         src={Logo}
                     />
                 </div>
-                <div className="self-stretch flex flex-col items-start justify-start pt-0 px-0 pb-[7px] box-border max-w-full">
-                    <div className="w-[332px] flex flex-row items-start justify-between py-0 pr-5 pl-0 box-border max-w-full gap-[20px]">
-                        <div className="rounded-t-3xs rounded-b-none bg-gainsboro flex flex-row items-start justify-start pt-3.5 pb-3 pr-[59px] pl-16">
-                            <div className="h-[46px] w-[195px] relative rounded-t-3xs rounded-b-none bg-gainsboro hidden" />
-                            <div className="relative inline-block min-w-[72px] z-[1]">
+                <div className="self-stretch flex flex-col items-start justify-start  box-border border-b-[4px] max-w-full">
+                    <div className="w-[332px] flex flex-row items-start justify-between py-0 pr-5 pl-0 box-border  max-w-full gap-[20px]">
+                        <div className="rounded-t-3xs rounded-t-lg  bg-gray-300 flex flex-row items-start justify-start pt-3.5 pb-3 pr-[59px] pl-16">
+                            <div className="h-[46px] w-[195px] relative rounded-t-3xs rounded-b-none bg-gray-300 hidden" />
+                            <div className="relative  inline-block min-w-[72px] z-[1]">
                                 Bangalore
                             </div>
                         </div>
