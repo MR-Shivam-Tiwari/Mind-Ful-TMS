@@ -213,4 +213,11 @@ body {
     font-style: normal;
   }
   
+  .section-gradient-home {
+    background: rgb(248,165,28);
+background: linear-gradient(90deg, rgba(248,165,28,0.30) 0%, rgba(252,176,69,0.30) 100%);
+
+
+  }
+
   
