@@ -215,9 +215,129 @@ body {
   
   .section-gradient-home {
     background: rgb(248,165,28);
-background: linear-gradient(90deg, rgba(248,165,28,0.30) 0%, rgba(252,176,69,0.30) 100%);
+background: linear-gradient(0deg, rgba(248,165,28,0.3) 0%, rgba(239,102,35,0.3) 100%);
+
 
 
   }
 
+  .footer-gradient{
+background: linear-gradient(0deg,  rgba(239,102,35,0.3) 0%, rgba(239,102,35,0) 100%);
+
+  }
+
+  .video-container {
+    position: relative;
+    margin: 0 auto;
+  }
   
+  .video-element {
+    width: 100%;
+    display: block;
+  }
+  
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .play-button:hover {
+    /* background-color: rgba(0, 0, 0, 0.7); */
+  }
+  
+  
+  .video-carousel-container {
+    /* position: relative;
+    overflow: hidden; */
+}
+
+.video-carousel {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease; */
+}
+
+.video-wrapper {
+    /* min-width: 33.33%; */
+    /* flex-shrink: 0; */
+    /* display: flex;
+    justify-content: center;
+    transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease; */
+}
+
+.video-wrapper.active {
+    /* transform: scale(1); */
+    /* filter: none;
+    opacity: 1; */
+}
+
+.video-wrapper.inactive {
+    /* transform: scale(0.8);
+    filter: blur(4px);
+    opacity: 0.5; */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  background-color: #000000;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container ul {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.container ul li {
+  list-style: none;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.container ul li video {
+  width: 200px;
+  transition: all 0.3s;
+}
+
+.container ul li video:hover {
+  transform: scale(1.1);
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+}

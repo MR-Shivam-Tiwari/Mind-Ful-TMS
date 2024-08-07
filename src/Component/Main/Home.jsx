@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import img1 from "../Images/Group 17.png";
 import img2 from "../Images/Group 16.png";
 import img3 from "../Images/Rectangle 9.png";
@@ -10,9 +10,23 @@ import { useNavigate } from 'react-router-dom';
 
 function Home() {
     const navigate = useNavigate();
+
+    const videoRef = useRef(null);  // Reference to the video element
+    const [isPlaying, setIsPlaying] = useState(false);  // State to track play/pause
+
+    const togglePlay = () => {
+        if (isPlaying) {
+            videoRef.current.pause();
+        } else {
+            videoRef.current.play();
+        }
+        setIsPlaying(!isPlaying);
+    };
     return (
         <div className=" ">
-            <Navbar />
+            <div className='sticky bg-white p-0 top-0 left-0 right-0 z-10'>
+                <Navbar />
+            </div>
             <section className='mb-5'>
                 <div className='flex justify-center mb-4'>
                     <img src='/home/banner01.png' />
@@ -35,7 +49,7 @@ function Home() {
                     </p>
                 </div>
                 <div className='flex justify-center'>
-                    <button className='bg-[#EF6623] rounded-lg px-8 py-3 text-white text-sm font-semibold'>
+                    <button className='bg-[#EF6623] hover:bg-orange-500 active:bg-orange-700 rounded-lg px-8 py-3 text-white text-sm font-semibold'>
                         SCHEDULE CONSULTATION
                     </button>
                 </div>
@@ -55,7 +69,7 @@ function Home() {
 
                 </div>
                 <div className='flex justify-center'>
-                    <button className='bg-[#EF6623] rounded-lg px-8 py-3 font-semibold text-sm text-white'>
+                    <button className='bg-[#EF6623] hover:bg-orange-500 active:bg-orange-700 rounded-lg px-8 py-3 font-semibold text-sm text-white'>
                         FREE TEST
                     </button>
                 </div>
@@ -92,7 +106,7 @@ function Home() {
                     </p>
                 </div>
                 <div className='flex justify-center'>
-                    <button className='bg-[#EF6623] rounded-lg px-8 py-3 font-semibold text-sm text-white'>
+                    <button className='bg-[#EF6623] hover:bg-orange-500 active:bg-orange-700 rounded-lg px-8 py-3 font-semibold text-sm text-white'>
                         MORE ABOUT TMS
                     </button>
                 </div>
@@ -137,7 +151,7 @@ function Home() {
                         <h1 className='text-xl font-semibold mb-5 text-center'>Psychology/Therapy</h1>
                         <div className='grid grid-cols-3 items-center mb-8 justify-center'>
                             <div className='flex flex-col justify-center  items-center text-center '>
-                                <div className='w-[64px] h-[64px] rounded-full bg-[#EF6623]'></div>
+                                <div className='w-[64px] h-[64px] rounded-full bg-[#EF6623] '></div>
                                 <p className='text-sm font-semibold'>Lorem Ipsum
                                     dolor qioe </p>
                             </div>
@@ -153,7 +167,7 @@ function Home() {
                             </div>
                         </div>
                         <div className='flex justify-center '>
-                            <button className='bg-[#F8A51C] rounded-lg px-8 py-3 font-semibold text-sm text-white'>
+                            <button className='bg-[#F8A51C] hover:bg-yellow-500 active:bg-yellow-600 rounded-lg px-8 py-3 font-semibold text-sm text-white'>
                                 LEARN MORE
                             </button>
                         </div>
@@ -165,7 +179,7 @@ function Home() {
                         <div className='grid grid-cols-3 items-center mb-8 justify-center'>
                             <div className='flex flex-col justify-center  items-center text-center'>
                                 <div className='w-[64px] h-[64px] rounded-full bg-[#EF6623]'></div>
-                                <p  className='text-sm font-semibold'>Lorem Ipsum
+                                <p className='text-sm font-semibold'>Lorem Ipsum
                                     dolor qioe </p>
                             </div>
                             <div className='flex flex-col justify-center items-center text-center'>
@@ -180,7 +194,7 @@ function Home() {
                             </div>
                         </div>
                         <div className='flex justify-center '>
-                            <button className='bg-[#F8A51C] rounded-lg px-8 py-3 font-semibold text-sm text-white'>
+                            <button className='bg-[#F8A51C] rounded-lg px-8 py-3 hover:bg-yellow-500 active:bg-yellow-600 font-semibold text-sm text-white'>
                                 LEARN MORE
                             </button>
                         </div>
@@ -189,10 +203,159 @@ function Home() {
             </section>
 
             <section className='py-8 px-4'>
+                <div className='mb-8 flex flex-col justify-center items-center'>
+                    <h1 className='text-3xl  font-semibold text-gray-800  text-center'>Our Locations</h1>
+                    <p className='text-center text-sm text-gray-500'>Lorem ipsum dolor sit amet</p>
+                </div>
+                <div>
+                    <div class="flex items-center justify-center py-4">
+                        <div class="">
+                            <span class="text-xl relative top-[13px] left-[35%] px-2 bg-white ">Banglore</span>
+
+                            <div class="w-[90vw] h-px bg-black "></div>
+                            {/* <div class="w-[30vw] h-px bg-black"></div> */}
+                        </div>
+                    </div>
+                    <div className='flex flex-col justify-center'>
+                        <div className='section-gradient-home px-4 mb-4 py-4 rounded-lg'>
+                            <h1 className='text-xl font-semibold text-gray-700 '>Aster CMI</h1>
+                            <p className='text-sm text-[#EF6623]'>Bangalore North</p>
+                        </div>
+                        <div className='section-gradient-home px-4 mb-4 py-4 rounded-lg'>
+                            <h1 className='text-xl font-semibold text-gray-700 '>Whitefield</h1>
+                            <p className='text-sm text-[#EF6623]'>Bangalore North</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center justify-center py-4">
+                        <div class="">
+                            <span class="text-xl relative top-[13px] left-[40%] px-2 bg-white ">Delhi</span>
+                            <div class="w-[90vw] h-px bg-black "></div>
+
+                            {/* <div class="w-[30vw] h-px bg-black"></div> */}
+                        </div>
+                    </div>
+                    <div className='flex flex-col justify-center'>
+                        <div className='section-gradient-home px-4 mb-4 py-4 rounded-lg'>
+                            <h1 className='text-xl font-semibold text-gray-700 '>Greater Kailash</h1>
+                            <p className='text-sm text-[#EF6623]'>Delhi</p>
+                        </div>
+
+                    </div>
+                </div>
 
             </section>
 
-            {/* <Footer /> */}
+            <section className='py-8 px-4'>
+                <div className='mb-8 flex flex-col justify-center items-center'>
+                    <h1 className='text-3xl  font-semibold text-gray-800  text-center'>Our Experts</h1>
+                </div>
+                <div className='grid grid-cols-3 gap-4 text-center'>
+                    <div className=' flex flex-col items-center justify-center'>
+                        <div className='mb-2 h-[71] w-[71] rounded-full'>
+                            <img className='w-full h-full rounded-full' src='/home/doctor1.png' />
+                        </div>
+                        <div className='mb-1'>
+                            <h1 className='font-semibold mb-1 text-[13px] text-gray-800'>Dr.Sheela Rao</h1>
+                            <p className='text-[11px] text-gray-500'>Clinical Psychologist</p>
+                        </div>
+                        <div className='mb-2'>
+                            <p className='text-[12px] text-gray-500 font-bold'>Bangalore</p>
+                        </div>
+                    </div>
+                    <div className=' flex flex-col items-center justify-center'>
+                        <div className='mb-2 h-[71] w-[71] rounded-full'>
+                            <img className='w-full h-full rounded-full' src='/home/doctor1.png' />
+                        </div>
+                        <div className='mb-1'>
+                            <h1 className='font-semibold mb-1 text-[13px] text-gray-800'>Dr.Sheela Rao</h1>
+                            <p className='text-[11px] text-gray-500'>Clinical Psychologist</p>
+                        </div>
+                        <div className='mb-2'>
+                            <p className='text-[12px] text-gray-500 font-bold'>Bangalore</p>
+                        </div>
+                    </div>
+                    <div className=' flex flex-col items-center justify-center'>
+                        <div className='mb-2 h-[71] w-[71] rounded-full'>
+                            <img className='w-full h-full rounded-full' src='/home/doctor1.png' />
+                        </div>
+                        <div className='mb-1'>
+                            <h1 className='font-semibold mb-1 text-[13px] text-gray-800'>Dr.Sheela Rao</h1>
+                            <p className='text-[11px] text-gray-500'>Clinical Psychologist</p>
+                        </div>
+                        <div className='mb-2'>
+                            <p className='text-[12px] text-gray-500 font-bold'>Bangalore</p>
+                        </div>
+                    </div>
+                    <div className=' flex flex-col items-center justify-center'>
+                        <div className='mb-2 h-[71] w-[71] rounded-full'>
+                            <img className='w-full h-full rounded-full' src='/home/doctor1.png' />
+                        </div>
+                        <div className='mb-1'>
+                            <h1 className='font-semibold mb-1 text-[13px] text-gray-800'>Dr.Sheela Rao</h1>
+                            <p className='text-[11px] text-gray-500'>Clinical Psychologist</p>
+                        </div>
+                        <div className='mb-2'>
+                            <p className='text-[12px] text-gray-500 font-bold'>Bangalore</p>
+                        </div>
+                    </div>
+                    <div className=' flex flex-col items-center justify-center'>
+                        <div className='mb-2 h-[71] w-[71] rounded-full'>
+                            <img className='w-full h-full rounded-full' src='/home/doctor1.png' />
+                        </div>
+                        <div className='mb-1'>
+                            <h1 className='font-semibold mb-1 text-[13px] text-gray-800'>Dr.Sheela Rao</h1>
+                            <p className='text-[11px] text-gray-500'>Clinical Psychologist</p>
+                        </div>
+                        <div className='mb-2'>
+                            <p className='text-[12px] text-gray-500 font-bold'>Bangalore</p>
+                        </div>
+                    </div>
+                    <div className=' flex flex-col items-center justify-center'>
+                        <div className='mb-2 h-[71] w-[71] rounded-full'>
+                            <img className='w-full h-full rounded-full' src='/home/doctor1.png' />
+                        </div>
+                        <div className='mb-1'>
+                            <h1 className='font-semibold mb-1 text-[13px] text-gray-800'>Dr.Sheela Rao</h1>
+                            <p className='text-[11px] text-gray-500'>Clinical Psychologist</p>
+                        </div>
+                        <div className='mb-2'>
+                            <p className='text-[12px] text-gray-500 font-bold'>Bangalore</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section>
+                <div className='p-8'>
+                <div>
+                    <h1 className='text-2xl font-semibold mb-6 text-center'>Clients Speak</h1>
+                </div>
+                    <div className='  rounded-[20px] overflow-hidden bg-[#F8A51C]'>
+                        <div className='flex items-center py-4 justify-center'>
+                            <h1 className='text-white text-lg font-semibold'>Therapy for Depression</h1>
+                        </div>
+                        <div className="video-container mt-5 w-[100%] h-[400px]">
+                            <video ref={videoRef} className="video-element w-full h-full object-cover">
+                                <source src="/home/random.mp4" type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                            <button onClick={togglePlay} className="play-button">
+                                {isPlaying ?
+                                    'Pause'
+                                    : <span><img src='/home/play.png' />'</span>
+
+                                }
+                            </button>
+                        </div>
+                    </div>
+                 
+                </div>
+            </section>
+
+            <Footer />
         </div>
     );
 }
