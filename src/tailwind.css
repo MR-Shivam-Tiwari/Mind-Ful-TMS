@@ -314,3 +314,7 @@ background: linear-gradient(0deg,  rgba(239,102,35,0.3) 0%, rgba(239,102,35,0) 1
 .bg-primary-orange{
   background: #EF6623;
 }
+
+.bg-secondary-yellow{
+  background:#F8A51C
+}

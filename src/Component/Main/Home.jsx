@@ -69,7 +69,7 @@ function Home() {
 
                 </div>
                 <div className='flex justify-center'>
-                    <button className='bg-[#EF6623] hover:bg-orange-500 active:bg-orange-700 rounded-lg px-8 py-3 font-semibold text-sm text-white'>
+                    <button onClick={()=>navigate('/selfAssesment')} className='bg-[#EF6623] hover:bg-orange-500 active:bg-orange-700 rounded-lg px-8 py-3 font-semibold text-sm text-white'>
                         FREE TEST
                     </button>
                 </div>

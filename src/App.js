@@ -18,6 +18,7 @@ import Result from './Component/Main/Assesment/Result';
 import Sample1 from './Component/Main/Service/Sample1';
 import Sample2 from './Component/Main/Service/Sample2';
 import Dummycontact from './Component/Main/Dummycontact';
+import SelfAssesment2 from './Component/Main/New Assesment/SelfAssesment2';
 
 
 
@@ -40,6 +41,7 @@ function App() {
             <Route path="/confirmation" element={<Confirmation />} />
             <Route path="/tms" element={<Tms />} />
             <Route path="/assesment" element={<SelfAssement />} />
+            <Route path="/selfAssesment" element={<SelfAssesment2 />} />
             <Route path="/test" element={<Test />} />
             <Route path="/assement-page" element={<AssesmentPage />} />
             <Route path="/result" element={<Result />} />
