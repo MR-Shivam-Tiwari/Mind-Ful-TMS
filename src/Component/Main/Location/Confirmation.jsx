@@ -1,12 +1,16 @@
-import React from 'react'
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Modal } from '@mui/material';
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 function Confirmation() {
     const navigate = useNavigate();
+    const [open, setOpen] = useState(false);
+    const [reasonModal, setReasonModal] = useState(false);
     return (
-        <div>
-            <div className=' p-5 lg:container mx-auto'>
-                <div className='' onClick={() => navigate('/summary')}>
+      <>
+          <div className='select-none'>
+            <div className='flex p-6 items-center'>
+                <div className='mr-4' onClick={() => navigate('/summary')}>
 
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -23,17 +27,21 @@ function Confirmation() {
                         <path d="M15 18l-6-6 6-6" />
                     </svg>
                 </div>
+                <div>
+                <h1 class="text-2xl font-bold ">Appointment
+                Confirmed!</h1>
+
+                </div>
             </div>
             <div class=" flex flex-col items-center justify-center bg-background text-foreground px-4">
                 <div class="w-full max-w-md bg-card p-6 rounded-lg ">
 
-                    <h1 class="text-2xl font-bold mb-2">Appointment Confirmed</h1>
-                    <p class="text-muted-foreground text-center mb-4">With Dr. David Samson</p>
-                    <div class="bg-card p-4 rounded-md border border-border mb-4">
-                        <div class="flex items-center justify-between px-4 mb-2">
+                    <p class="text-primary-orange text-center mb-4">  Appointment details below</p>
+                    <div class="bg-card p-4 border-[#EF6623] rounded-md border border-border mb-4">
+                        <div class="flex items-center justify-between px-2 mb-2">
                             <div>
 
-                                <svg xmlns="http://www.w3.org/2000/svg" width="26" color="gray" height="26" fill="currentColor" class="bi bi-calendar4-event" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" color="gray" height="26" fill="#EF6623" class="bi bi-calendar4-event" viewBox="0 0 16 16">
                                     <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z" />
                                     <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
                                 </svg>
@@ -44,8 +52,9 @@ function Confirmation() {
                                 <p class="text-muted-foreground text-sm">Asia/Kolkata - IST (+05:30)</p>
                             </div>
                         </div>
+                        <div className='border-[.8px] mb-4 border-[#EF6623]'></div>
                         <div class="flex items-center justify-between  mb-2">
-                            <svg className='ml-4' xmlns="http://www.w3.org/2000/svg" width="26" height="26" color='gray' fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                            <svg className='ml-4' xmlns="http://www.w3.org/2000/svg" width="26" height="26" color='gray' fill="#EF6623" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                                 <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6" />
                             </svg>
                             <div className='ml-7'>
@@ -56,17 +65,69 @@ function Confirmation() {
                     </div>
                     <div className='flex justify-center'>
 
-                        <p class="text-center text-muted-foreground mb-4 text-sm inline-block  underline border-gray-400">
+                        <p class="text-center text-primary-orange mb-4 text-sm inline-block  underline border-gray-400">
                             Add to Calendar | Download as ICS
                         </p>
                     </div>
 
-                    <button class="w-full bg-gray-300  text-secondary-foreground py-3 rounded-lg mb-4 hover:bg-secondary/80">BOOK ANOTHER APPOINTMENT</button>
-                    <button class="w-full text-destructive-foreground text-muted-foreground text-sm inline-block  rounded-lg underline">Cancel Appointment</button>
+                    <button onClick={() => navigate('/location')} class="w-full font-semibold bg-primary-orange text-white py-3 rounded-lg mb-4 ">BOOK ANOTHER APPOINTMENT</button>
+                    <button onClick={() => setOpen(true)} class="w-full text-destructive-foreground text-muted-foreground text-sm inline-block  rounded-lg underline">Cancel Appointment</button>
                 </div>
 
             </div>
         </div>
+        <Dialog open={open} onClose={()=>setOpen(false)}>
+        <DialogContent>
+          <div className=''>
+            <div className='flex flex-col items-center justify-center mb-6'>
+                <h1 className=' text-xl font-semibold   mb-5 '>We’re sad to let you go :(</h1>
+                <p className='text-sm text-center'>Are you sure you want to cancel your Appointment?</p>
+            </div>
+            <div className='flex justify-around'>
+                <button onClick={()=>{
+                    setReasonModal(true);
+                    setOpen(false);
+                }} className='py-4 px-7 font-semibold font-semibod text-white  bg-[#58595B] rounded-lg '>
+                YES
+                </button>
+                <button onClick={()=>setOpen(false)} className='py-4 px-7 font-semibold font-semibod text-white bg-primary-orange rounded-lg '>
+                NO
+                </button>
+            </div>
+
+          </div>
+        </DialogContent>
+        
+      </Dialog>
+      <Dialog className='w-full' open={reasonModal} onClose={()=>setReasonModal(false)}>
+        <DialogContent className='w-full '>
+          <div className=''>
+            <div className='flex flex-col items-center justify-center mb-6'>
+                <div className='mb-3'>
+                    <img src='/home/check.svg'/>
+                </div>
+                <h1 className=' text-xl font-semibold   mb-2'>Appointment Cancelled</h1>
+            </div>
+            <div className='mb-5'>
+                <p className='text-sm text-primary-orange text-center'>Please let us know what went wrong</p>
+                <textarea
+                 className='w-full border-2  outline-orange-400 border-orange-400 rounded-lg p-2'
+                 placeholder='Enter your reason'
+                    rows={4}
+                  />
+            </div>
+            <div className='flex justify-around'>
+                <button onClick={()=>navigate('/')} className='py-4 px-7 font-semibold font-semibod text-white  bg-primary-orange rounded-lg '>
+                Submit
+                </button>
+               
+            </div>
+
+          </div>
+        </DialogContent>
+        
+      </Dialog>
+      </>
     )
 }
 

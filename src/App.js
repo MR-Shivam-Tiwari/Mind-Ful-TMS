@@ -26,7 +26,7 @@ function App() {
     <div className=" ">
       <Router>
 
-        <div className="flex-grow">
+        <div className="flex-grow select-none">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/newHome" element={<Home />} />

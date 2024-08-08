@@ -23,7 +23,7 @@ function Home() {
         setIsPlaying(!isPlaying);
     };
     return (
-        <div className=" ">
+        <div className=" select-none">
             <div className='sticky bg-white p-0 top-0 left-0 right-0 z-10'>
                 <Navbar />
             </div>
@@ -49,12 +49,12 @@ function Home() {
                     </p>
                 </div>
                 <div className='flex justify-center'>
-                    <button className='bg-[#EF6623] hover:bg-orange-500 active:bg-orange-700 rounded-lg px-8 py-3 text-white text-sm font-semibold'>
+                    <button onClick={()=>navigate('/location')} className='bg-[#EF6623] hover:bg-orange-500 active:bg-orange-700 rounded-lg px-8 py-3 text-white text-sm font-semibold'>
                         SCHEDULE CONSULTATION
                     </button>
                 </div>
             </section>
-            <section className='section-gradient-home py-10'>
+            <section className='bg-primary-div py-10'>
 
 
                 <div className='flex flex-col justify-center mb-5 px-8 bg-[rgba(239, 102, 35, 0.3)]'>
@@ -84,7 +84,7 @@ function Home() {
                         depression, anxiety, OCD and more.</p>
                 </div>
 
-                <div className='flex justify-between mb-5 items-center py-6 px-2 rounded-lg gap-6  section-gradient-home'>
+                <div className='flex justify-between mb-5 items-center py-6 px-2 rounded-lg gap-6  bg-primary-div'>
                     <div className='h-[150px] w-[167px]'>
                         <img className='w-full h-full' src="/home/doctor.png" />
                     </div>
@@ -142,7 +142,7 @@ function Home() {
                 </div>
             </section>
 
-            <section className='py-8 px-4 section-gradient-home'>
+            <section className='py-8 px-4 bg-primary-div'>
                 <div className='mb-8'>
                     <div className='mb-8'>
                         <h1 className='text-3xl  font-semibold text-gray-800  text-center'>Services we offer</h1>
@@ -217,11 +217,11 @@ function Home() {
                         </div>
                     </div>
                     <div className='flex flex-col justify-center'>
-                        <div className='section-gradient-home px-4 mb-4 py-4 rounded-lg'>
+                        <div className='bg-primary-div px-4 mb-4 py-4 rounded-lg'>
                             <h1 className='text-xl font-semibold text-gray-700 '>Aster CMI</h1>
                             <p className='text-sm text-[#EF6623]'>Bangalore North</p>
                         </div>
-                        <div className='section-gradient-home px-4 mb-4 py-4 rounded-lg'>
+                        <div className='bg-primary-div px-4 mb-4 py-4 rounded-lg'>
                             <h1 className='text-xl font-semibold text-gray-700 '>Whitefield</h1>
                             <p className='text-sm text-[#EF6623]'>Bangalore North</p>
                         </div>
@@ -237,7 +237,7 @@ function Home() {
                         </div>
                     </div>
                     <div className='flex flex-col justify-center'>
-                        <div className='section-gradient-home px-4 mb-4 py-4 rounded-lg'>
+                        <div className='bg-primary-div px-4 mb-4 py-4 rounded-lg'>
                             <h1 className='text-xl font-semibold text-gray-700 '>Greater Kailash</h1>
                             <p className='text-sm text-[#EF6623]'>Delhi</p>
                         </div>

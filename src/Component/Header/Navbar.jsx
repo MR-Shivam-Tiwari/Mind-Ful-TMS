@@ -26,7 +26,7 @@ function Navbar() {
   };
 
   return (
-    <div>
+    <div className="select-none">
       <header className="flex items-center justify-between px-6 py-0">
         <div onClick={()=>setOpen(true)} className="cursor-pointer">
           <img src="/nav/menu.png" />
@@ -37,7 +37,7 @@ function Navbar() {
     
       </header>
       <Drawer open={open} onClose={toggleDrawer(false)} className="">
-        <div className="w-[261px] px-2 py-6">
+        <div className="w-[261px] px-2 py-6 select-none">
           <div className="flex justify-end">
             <img
               onClick={() => setOpen(false)}
