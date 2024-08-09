@@ -124,18 +124,18 @@ function Home() {
                 </div>
                 <div className='grid grid-cols-2 gap-5 text-center  justify-center'>
                     <div className='flex flex-col justify-center  items-center'>
-                        <img className='w-[64px] h-[64px] text-center' src='/home/medical.png' />
+                        <img className='w-[64px] h-[64px] text-center' src='/home/medical.svg' />
                         <p className='text-md font-semibold mt-3'>Personalized care</p>
                     </div>
                     <div className='flex flex-col justify-center  items-center'>
-                        <img className='w-[64px] h-[64px]' src='/home/handshake.png' />
+                        <img className='w-[64px] h-[64px]' src='/home/handshake.svg' />
                         <p className='text-md font-semibold mt-3'>Trust</p>
                     </div>
                     <div className='flex flex-col justify-center  items-center'>
-                        <img className='w-[64px] h-[64px]' src='/home/group.png' />
+                        <img className='w-[64px] h-[64px]' src='/home/group.svg' />
                         <p className='text-md font-semibold mt-3'>Safe</p>
                     </div><div className='flex flex-col justify-center  items-center'>
-                        <img className='w-[64px] h-[64px]' src='/home/heart.png' />
+                        <img className='w-[64px] h-[64px]' src='/home/heart.svg' />
                         <p className='text-md font-semibold mt-3'>Holistic</p>
                     </div>
 

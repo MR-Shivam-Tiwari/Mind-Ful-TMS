@@ -62,7 +62,7 @@ const Services = () => {
     <>
         <div className='px-4'>
         <div className='flex p-6 items-center'>
-                <div className='mr' onClick={() => navigate('/selfAssesment')}>
+                <div className='mr' onClick={() => navigate('/')}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="26"

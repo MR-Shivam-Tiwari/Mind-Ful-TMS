@@ -29,10 +29,10 @@ function Navbar() {
     <div className="select-none">
       <header className="flex items-center justify-between px-6 py-0">
         <div onClick={()=>setOpen(true)} className="cursor-pointer">
-          <img src="/nav/menu.png" />
+          <img src="/home/menu.svg" />
         </div>
         <div className="cursor-pointer w-[129px] h-[90px]">
-          <img className="cursor-pointer w-full h-full" src="/home/logo01.png" />
+          <img className="cursor-pointer w-full h-full" src="/home/logoMain.svg" />
         </div>
     
       </header>
@@ -42,7 +42,7 @@ function Navbar() {
             <img
               onClick={() => setOpen(false)}
               className="w-[30px] h-[30px] cursor-pointer"
-              src="/home/close.png"
+              src="/home/close.svg"
             />
           </div>
           <div className="py-4 ">
