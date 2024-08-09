@@ -167,7 +167,7 @@ function Home() {
                             </div>
                         </div>
                         <div className='flex justify-center '>
-                            <button className='bg-[#F8A51C] hover:bg-yellow-500 active:bg-yellow-600 rounded-lg px-8 py-3 font-semibold text-sm text-white'>
+                            <button onClick={() => navigate("/service/Therapy Services")} className='bg-[#F8A51C] hover:bg-yellow-500 active:bg-yellow-600 rounded-lg px-8 py-3 font-semibold text-sm text-white'>
                                 LEARN MORE
                             </button>
                         </div>
@@ -194,7 +194,7 @@ function Home() {
                             </div>
                         </div>
                         <div className='flex justify-center '>
-                            <button className='bg-[#F8A51C] rounded-lg px-8 py-3 hover:bg-yellow-500 active:bg-yellow-600 font-semibold text-sm text-white'>
+                            <button onClick={() => navigate("/service/TMS Treatment Services")} className='bg-[#F8A51C] rounded-lg px-8 py-3 hover:bg-yellow-500 active:bg-yellow-600 font-semibold text-sm text-white'>
                                 LEARN MORE
                             </button>
                         </div>

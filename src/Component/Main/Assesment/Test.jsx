@@ -1,39 +1,105 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+
+
+const tests = [
+    {
+        title: 'PHQ-9 Depression Test',
+        link: '/assesment-page/phq9',
+        id: 'phq9',
+        paragraph: `The PHQ-9 consists of 9 questions that ask about feelings of sadness, hopelessness, and loss of interest in activities, among
+other symptoms.
+
+By answering these questions, you can gain insights into your depressive symptoms and determine if you might benefit from further support or professional help.`
+    },
+    {
+        title: 'PSS-10 Stress Assessment',
+        link: '/assesment-page/pss10',
+        id: 'pss10',
+        paragraph: `This test measures your perception of stress and how you handle life's challenges
+
+The PSS-10 consists of 10 questions that ask about your feelings and thoughts during the last month, including how often you felt nervous, stressed, or unable to control important things in your life.`
+    },
+    {
+        title: 'GAD-7 Anxiety Test',
+        link: '/assesment-page/gad7',
+        id: 'gad7',
+        paragraph: `This questionnaire helps you evaluate the severity of your anxiety symptoms over the past two weeks.
+
+The GAD-7 consists of 7 questions that ask about feelings of nervousness, worry, and restlessness, among other symptoms. By answering these questions honestly, you can get a clearer picture of your anxiety levels and determine if you might benefit from further support or professional help.`
+    },
+    {
+        title: 'K10 (Kessler Psychological Distress Scale)',
+        link: '/assesment-page/k10',
+        id: 'k10',
+        paragraph: `The K10 is a simple and effective tool designed to measure your level of psychological distress over the past month. This test can help you gain insights into your mental health, especially if you're feeling anxious, depressed, or generally overwhelmed.
+
+The K10 consists of 10 questions that ask about feelings of nervousness, hopelessness, restlessness, and fatigue, among other symptoms. By answering these questions, you can get a better understanding of your current emotional state and whether you might benefit from further support or professional help.`    
+    }
+
+]
 
 function Test() {
     const navigate = useNavigate();
+    const {id} = useParams();
+    const test = tests.find(t => t.id === id);
+    const [checked, setChecked] = useState(false);
+    
     return (
         <div>
-            <div className=' container mx-auto p-5' onClick={() => navigate('/assesment')}>
+            <div className='flex p-6 items-center'>
+                <div className='mr' onClick={() => navigate('/selfAssesment')}>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="26"
+                        height="26"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    // className="w-6 h-6"
+                    >
+                        <path d="M15 18l-6-6 6-6" />
+                    </svg>
+                </div>
+                <div>
 
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="26"
-                    height="26"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                // className="w-6 h-6"
-                >
-                    <path d="M15 18l-6-6 6-6" />
-                </svg>
+                </div>
+                <div>
+                    <h1 class="text-2xl font- ">Self-Assessment</h1>
+
+                </div>
+
+
             </div>
-            <div class=" flex  items-center justify-center bg-background text-foreground ">
-                <div class="w-full max-w-md bg-card p-6 rounded-lg ">
+            <div className='px-4 '>
+                <div className='mb-4'>
+                    <h1 className='text-2xl text-primary-orange font-semibold mb-3'>{test?.title}</h1>
+                    <p className='text-sm font-semibold text-primary-orange'>Welcome to the {test?.title} Page</p>
+                </div>
+                <div className='mb-4 text-gray-500'>
+                   {test?.paragraph?.split('\n').map((p, index) => <p className='text-sm mb-2' key={index}>{p}</p>)}
+                </div>
+                <div className='mb-4'>
+                    <p className='text-primary-orange text-sm font-semibold'>Answer the following questions honestly
+                        to get the most accurate results.
+                        Your responses are confidential.</p>
+                </div>
 
-                    <h1 class="text-2xl font-bold mb-2 text-center">TEST FOR DEPRESSION</h1>
-                    <h2 class="text-lg font-semibold mb-4 text-center">PHQ-9 Depression Screening Test</h2>
-                    <p class="text-muted-foreground mb-4 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-                    <p class="text-muted-foreground mb-6 text-center">We understand that you are feeling sad. Do not worry, we are here to help you.</p>
-                    <div className='flex justify-center items-center'>
+                <div className='mb-4'>
+                    <h1 className=' font-semibold text-xl mb-2'>Disclaimer:</h1>
+                    <p className='text-gray-500 text-[12px]'>Our self-assessment tools are designed to help you gain insights into your mental health. They are not a substitute for a professional diagnosis or treatment. The results of these tests should be discussed with a qualified healthcare provider who can offer you a thorough evaluation and appropriate care. If you are experiencing severe distress or have thoughts of harming yourself or others, please seek immediate help from a mental health professional or contact emergency services. Your privacy is important to us, and all responses are kept confidential.</p>
+                </div>
 
-                        <button onClick={()=> navigate('/assement-page')} class=" bg-gray-300 px-14 py-3 text-muted-foreground  rounded-lg hover:bg-muted/80 mb-6">START TEST</button>
-                    </div>
+                <div className='flex justify-center mb-4'>
+                    <input className='mr-4' type='checkbox' value={checked} onChange={() => setChecked(!checked)}/>
+                    <p className='text-primary-orange'>I understand</p>
+                </div>
 
+                <div className='flex justify-center'>
+                    <button disabled={!checked} onClick={() => navigate(test?.link)} className={` text-white p-3 rounded-lg font-semibold px-10 ${!checked ? 'cursor-not-allowed bg-gray-300' : 'bg-primary-orange active:bg-orange-500'}`}>TAKE THE TEST</button>
                 </div>
             </div>
         </div>

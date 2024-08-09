@@ -48,7 +48,7 @@ const SelfAssesment2 = () => {
                         <h1 className='text-center text-xl mb-4 underline'>Available tests:</h1>
                     </div>
                     <div className='grid grid-cols-1 px-4 py-2 gap-4'>
-                        <div className='bg-secondary-yellow overflow-hidden rounded-xl min-h-[250px]'>
+                        <div onClick={()=>navigate('/test/phq9')} className='bg-secondary-yellow overflow-hidden rounded-xl min-h-[250px]'>
                             <div
                                 className="bg-cover flex justify-center items-center p-3 flex-col bg-center  w-full h-[80%] "
                                 style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/home/depression.svg')" }}
@@ -60,7 +60,7 @@ const SelfAssesment2 = () => {
                                 <h1 className='text-white text-xl font-bold text-center'>Take the PHQ-9 Test</h1>
                             </div>
                         </div>
-                        <div className='bg-secondary-yellow overflow-hidden rounded-xl min-h-[250px]'>
+                        <div onClick={()=>navigate('/test/gad7')} className='bg-secondary-yellow overflow-hidden rounded-xl min-h-[250px]'>
                             <div
                                 className="bg-cover flex justify-center items-center flex-col bg-center p-3  w-full h-[80%] "
                                 style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/home/anxiety.svg')" }}
@@ -72,7 +72,7 @@ const SelfAssesment2 = () => {
                                 <h1 className='text-white text-xl font-bold text-center'>Take the GAD-7 Test</h1>
                             </div>
                         </div>
-                        <div className='bg-secondary-yellow overflow-hidden rounded-xl min-h-[250px]'>
+                        <div onClick={()=>navigate('/test/pss10')} className='bg-secondary-yellow overflow-hidden rounded-xl min-h-[250px]'>
                             <div
                                 className="bg-cover p-3 flex justify-center items-center flex-col bg-center  w-full h-[80%] "
                                 style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/home/stress.svg')" }}
@@ -92,7 +92,7 @@ const SelfAssesment2 = () => {
 
                         </div>
                         <div className='grid grid-cols-1 px-4 py-2 gap-4'>
-                            <div className='bg-secondary-yellow overflow-hidden rounded-xl min-h-[250px]'>
+                            <div onClick={()=>navigate('/test/k10')} className='bg-secondary-yellow overflow-hidden rounded-xl min-h-[350px]'>
                                 <div
                                     className="bg-cover flex justify-center items-center p-4 flex-col bg-center  w-full h-[80%] "
                                     style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/home/brain.svg')" }}
@@ -128,7 +128,7 @@ const SelfAssesment2 = () => {
                         </div>
                     </div>
                     <div className='mb-4'>
-                        <button className='text-white font-semibold  bg-primary-orange  active:bg-orange-400 p-4 rounded w-full'>LEARN MORE</button>
+                        <button onClick={()=>navigate('/')} className='text-white font-semibold  bg-primary-orange  active:bg-orange-400 p-4 rounded w-full'>LEARN MORE</button>
                     </div>
                 </div>
             </div>
