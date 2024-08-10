@@ -1,13 +1,15 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../../Header/Navbar';
 
 const SelfAssesment2 = () => {
     const navigate = useNavigate();
     return (
         <>
+             
             <div>
                 <div className='flex p-6 items-center'>
-                    <div className='mr' onClick={() => navigate('/summary')}>
+                    <div className='mr' onClick={() => navigate('/')}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="26"

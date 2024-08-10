@@ -47,7 +47,7 @@ function AssesmentPage() {
         <div>
 
 <div className='flex p-6 items-center'>
-                    <div className='mr' onClick={() => navigate('/summary')}>
+                    <div className='mr' onClick={() => navigate('/test/'+test.id)}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="26"

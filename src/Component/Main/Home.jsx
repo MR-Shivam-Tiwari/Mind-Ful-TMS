@@ -24,9 +24,7 @@ function Home() {
     };
     return (
         <div className=" select-none">
-            <div className='sticky bg-white p-0 top-0 left-0 right-0 z-10'>
-                <Navbar />
-            </div>
+           
             <section className='mb-5'>
                 <div className='flex justify-center mb-4'>
                     <img src='/home/banner01.png' />
