@@ -30,7 +30,7 @@ function Home() {
                     <img src='/home/banner01.png' />
                 </div>
                 <div className='flex flex-col justify-center px-8'>
-                    <h1 className=' text-3xl mb-5 font-[30px] text-center font-sans font-semibold '>
+                    <h1 className=' text-3xl mb-5  text-center font-sans font-semibold '>
 
 
                         You Deserve to Feel Better
